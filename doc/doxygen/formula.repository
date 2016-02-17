@@ -1,0 +1,53 @@
+\form#0:$\tau(q,\mathbf{u}) = \hat{\mathbf z}^T(\mathbf F_1(q,\mathbf{u})\times\mathbf a_1(q) + \mathbf F_2(q,\mathbf{u})\times \mathbf a_2(q))$
+\form#1:$\hat{\mathbf z}$
+\form#2:$\mathbf{a}=(a\cos q,a\sin q,0)^T$
+\form#3:$\mathbf F_i=\kappa(s_i - s_0)\frac{\mathbf s_i}{s_i}$
+\form#4:$i\in\{1,2\}$
+\form#5:$\kappa$
+\form#6:$\mathbf{s}_1=(-h-L\sin u_1,-d+L\cos u_1,0)^T+\mathbf{a}$
+\form#7:$\mathbf{s}_2=(h+L\sin u_2,-d+L\cos u_2,0)^T-\mathbf{a}$
+\form#8:$-65^\circ\le q \le 65^\circ$
+\form#9:$0\le u_1\le\pi$
+\form#10:$0\le u_2\le\pi$
+\form#11:$ -0.065992 \le k \le 0.514579$
+\form#12:$-25^\circ\le q\le 25^\circ$
+\form#13:$ \ddot{q}(\mathbf{x},\mathbf{u}) = (\tau_{actuators} - \tau_{damping} - \tau_{gravity} - \tau_{friction})/I $
+\form#14:$ \tau(\mathbf{x},\mathbf{u}) = \tau_{actuators}(q,\mathbf{u}) - \tau_{damping} - \tau_{gravity} - \tau_{friction} $
+\form#15:$ \tau(q,\mathbf{u}) = \mathbf{\hat{z}}^\top(\mathbf{a}_1\times\mathbf{F}_1+\mathbf{a}_2\times\mathbf{F}_2)$
+\form#16:$\mathbf{F}_1,\mathbf{F}_2$
+\form#17:$\mathbf{F}_i(q,u_i)=\kappa(s_i-s_0)\hat{\mathbf{s}}_i\quad i\in\{1,2\}$
+\form#18:$\mathbf{s}_1,\mathbf{s}_2$
+\form#19:$\mathbf{s}_i=\mathbf{s}_i(q,u_i)\quad i\in\{1,2\}$
+\form#20:$\mathbf{a}_1,\mathbf{a}_2$
+\form#21:$\mathbf{a}_i=\mathbf{a}_i(q)\quad i\in\{1,2\}$
+\form#22:$ \tau(\mathbf{x},\mathbf{u}) = b_c\dot{q} $
+\form#23:$ \tau(\mathbf{x},\mathbf{u}) = g_c\sin{q} $
+\form#24:$ \tau(\mathbf{x},\mathbf{u}) = f_v \dot{q} + f_c sign(\dot{q}) $
+\form#25:$ f_v $
+\form#26:$ f_c $
+\form#27:$k(q,\mathbf{u})=-\frac{\partial\tau}{\partial q}|_{q}$
+\form#28:$\tau$
+\form#29:$\tau(\mathbf{x},\mathbf{u}) = u_1 (q-u_0)$
+\form#30:$k=u_1$
+\form#31:$q_{eq}=u_0$
+\form#32:$\tau(q,\mathbf{u}) = \kappa BC\sin(u_1+q)\left(1+\frac{ru_2-(C-B)}{\sqrt{B^2 + C^2 - 2BC\cos(u_1+q)}}\right)$
+\form#33:$B$
+\form#34:$C$
+\form#35:$r$
+\form#36:$\begin{array}{rl}k(\mathbf{x},\mathbf{u}) =&\kappa BC\cos(u_1+q)\left( 1 + \frac{ru_2 - (C-B)}{\sqrt{B^2+C^2-2BC\cos(u_1+q)}} \right)\\ &-\kappa BC\sin(u_1+q)\frac{(ru_2-(C-B))BC\sin(u_1+q)}{(B^2 + C^2 - 2BC\cos(u_1+q))^{\frac{3}{2}}}\end{array}$
+\form#37:$q_{0}=u_1$
+\form#38:$-\frac{\pi}{2}\le q \le\frac{\pi}{2}$
+\form#39:$-\frac{\pi}{2}\le u_1\le\frac{\pi}{2}$
+\form#40:$-0.657894\le k\le 0.415422$
+\form#41:$-\frac{\pi}{2}\le q_0\le\frac{\pi}{2}$
+\form#42:$ V_{out} = I R_s ( 1 + R_2/R_2) \to I= \frac{V_{out}}{R_s(1+R_2/R_2)}$
+\form#43:$ \tau(\mathbf{x},\mathbf{u}) = \tau_{actuators} - \tau_{damping} - \tau_{gravity} - \tau_{friction} $
+\form#44:$ \tau(q,\mathbf{u}) = \kappa BC\sin(u_1-q)\left(1+\frac{ru_2-(C-B)}{\sqrt{B^2 + C^2 - 2BC\cos(u_1-q)}}\right)$
+\form#45:$k(q,\mathbf{u})=-\frac{\partial\tau}{\partial q}|_{q}= \kappa BC\cos(u_1-q)\left(1+\frac{(ru_2-(C-B)}{\sqrt{B^2+C^2-2BC\cos(u_1-q)}}\right) -\frac{\kappa B^2 C^2\sin^2(u_1-q)(ru_2-(C-B))}{(B^2+C^2-2BC\cos(u_1-q))^{\frac{3}{2}}}$
+\form#46:$\mathbf{J}_{q_0}=(1,0,0)^\top$
+\form#47:$ F = \kappa (l-l_0) $
+\form#48:$ l-l_0 $
+\form#49:$ \tau(q) = b_c \dot{q} $
+\form#50:$ b_c $
+\form#51:$ g(q) = g_c sin(q) $
+\form#52:$ g_c $

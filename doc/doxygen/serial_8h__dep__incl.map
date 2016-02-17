@@ -1,0 +1,6 @@
+<map id="/home/fan/hwt/serial/include/serial.h" name="/home/fan/hwt/serial/include/serial.h">
+<area shape="rect" id="node2" href="$serial_8c.html" title="Simple serial port library for Windows and Linux, written in plain C. " alt="" coords="5,97,144,138"/>
+<area shape="rect" id="node3" href="$vsa__arduino__interface_8h.html" title="Module for interfacing to variable stiffness actuators (e.g., Edinburgh VSA, MACCEPA). " alt="" coords="169,97,340,138"/>
+<area shape="rect" id="node4" href="$vsa__arduino__interface_8c.html" title="Module for interfacing to variable stiffness actuators (e.g., Edinburgh VSA, MACCEPA). " alt="" coords="85,187,245,229"/>
+<area shape="rect" id="node5" href="$vsa__mex__interface_8c.html" title="Matlab MEX gateway for controlling/reading sensor values from the variable stiffness robots in the la..." alt="" coords="270,187,417,229"/>
+</map>
