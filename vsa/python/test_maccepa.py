@@ -63,6 +63,39 @@ def direct_motor_control():
 	# return to zero position when done
 	go_zeros()
 
+def test_servo1():
+	useq = [0.5, 1, 1.5, 1, 0.5 ,0, -0.5 , -1, -1.5 , -0.5,0 ,0.5, 1, 1.5, 1, 0.5 ,0, -0.5 , -1, -1.5 , -0.5,0]
+	"""Control motors directly with sliders."""
+	slb = gui.createSliderBox(robot.dimU,'Direct Motor Control')
+	for i in range(0,robot.dimU):
+		slb.setupSlider(i,robot.u_llim[i],robot.u_ulim[i],'u%d'%i,0.01)
+	y=robot.read(); qdot = 0; q = y[0]; qddot = y[1] # read arm state
+	slb.setValues([0,0,0]) # set sliders to zeros
+
+	# scope for plotting out sensor signals
+	q_scope     = gui.Scope(1,  0,250,600,200,'Position')
+	qdot_scope  = gui.Scope(1,  0,475,600,200,'Velocity')
+	qddot_scope = gui.Scope(1,  0,700,600,200,'Acceleration')
+	m0_scope    = gui.Scope(2,680,250,600,200,'Motor 0 Commanded/Actual Positions')
+	m1_scope    = gui.Scope(2,680,475,600,200,'Motor 1 Commanded/Actual Positions')
+	
+	m = [0,0]
+	
+	for n in range(0,22):
+		u = slb.getValues()
+		u[0] = useq[n]
+		y = robot.run_step(u)
+		qdot = (y[0]-q)/0.02; q = y[0]; qddot = y[1]; m[0]=y[2]; m[1]=y[3];
+		q_scope    .add([q])
+		qdot_scope .add([qdot])
+		qddot_scope.add([qddot])
+		m0_scope   .add([u[0],m[0]])
+		m1_scope   .add([u[1],m[1]])
+		time.sleep(1)
+	
+	# return to zero position when done
+	go_zeros()
+
 def emg_control():
 	"""Control motors directly with EMG."""
 	slb = gui.createSliderBox(10,'EMG Eq. Pos./Stiffness Control')
@@ -76,7 +109,7 @@ def emg_control():
 	slb.setupSlider(7, 0,50  ,'u0 gain'           ,0.1)
 	slb.setupSlider(8, 0,50  ,'u1 gain'           ,0.1)
 	slb.setupSlider(9,-1,1   ,'Normal / Reverse'  ,1)
-	slb.setValues([60, 600, 2.24, 1, 0, 1, 0, 0, 0, 1])
+	slb.setValues([60, 600, 2.24, 2.1, 0, 2.9, 0, 0, 0, 1])
 
         emg = audio.AudioInterface()
 

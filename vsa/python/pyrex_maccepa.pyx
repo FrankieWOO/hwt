@@ -5,7 +5,7 @@
 
 DEF DIMQ = 1 # TODO: how to automatically extract these values from sketchbook/maccepa/defines.h ?
 #DEF DIMU = 3 #
-DEF DIMU = 2 #
+DEF DIMU = 3 #
 DEF DIMY = 5 #
 DEF DIMX = 2*DIMQ
 
@@ -14,8 +14,8 @@ cdef extern from "../sketchbook/maccepa/defines.h":
 	double U_LLIM_RAD_SERVO0
 	double U_ULIM_RAD_SERVO1
 	double U_LLIM_RAD_SERVO1
-	#double U_ULIM_DAMPER0
-	#double U_LLIM_DAMPER0
+	double U_ULIM_DAMPER0
+	double U_LLIM_DAMPER0
 
 cdef extern from "vsa_arduino_interface.h":
 	ctypedef struct ArduinoInterface:
@@ -133,10 +133,10 @@ cdef class HardwareInterface:
 	cdef ArduinoInterface AI
 	cdef int isOk
 	dimU = DIMU
-	#u_ulim=[U_ULIM_RAD_SERVO0,U_ULIM_RAD_SERVO1,U_ULIM_DAMPER0]
-	#u_llim=[U_LLIM_RAD_SERVO0,U_LLIM_RAD_SERVO1,U_LLIM_DAMPER0]
-	u_ulim=[U_ULIM_RAD_SERVO0,U_ULIM_RAD_SERVO1]
-	u_llim=[U_LLIM_RAD_SERVO0,U_LLIM_RAD_SERVO1]
+	u_ulim=[U_ULIM_RAD_SERVO0,U_ULIM_RAD_SERVO1,U_ULIM_DAMPER0]
+	u_llim=[U_LLIM_RAD_SERVO0,U_LLIM_RAD_SERVO1,U_LLIM_DAMPER0]
+	#u_ulim=[U_ULIM_RAD_SERVO0,U_ULIM_RAD_SERVO1]
+	#u_llim=[U_LLIM_RAD_SERVO0,U_LLIM_RAD_SERVO1]
 
 	def __init__(self, port):
 		self.isOk = vsa_arduino_interface_init(&self.AI, port)
@@ -234,9 +234,9 @@ cdef class HardwareInterface:
 			u[1]=U_ULIM_RAD_SERVO1
 		elif u[1]<U_LLIM_RAD_SERVO1:
 			u[1]=U_LLIM_RAD_SERVO1
-		#if u[2]>U_ULIM_DAMPER0:
-		#	u[2]=U_ULIM_DAMPER0
-		#elif u[2]<U_LLIM_DAMPER0:
-		#	u[2]=U_LLIM_DAMPER0
+		if u[2]>U_ULIM_DAMPER0:
+			u[2]=U_ULIM_DAMPER0
+		elif u[2]<U_LLIM_DAMPER0:
+			u[2]=U_LLIM_DAMPER0
 		return u
 

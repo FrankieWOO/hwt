@@ -10,6 +10,7 @@
 #define __maccepa_defines_h
 
 /* #define VARIABLE_DAMPING */
+#define VARIABLE_DAMPING
 
 /** \brief Dimensionality of joint space. */
 #define DIMQ 1
@@ -85,7 +86,7 @@
  * Alex: For HS-7950TH the tested min command is 1506
  * The HSR-5990TG had originally a value of 1100
  */
-#define U_MIN_SERVO1 1506
+#define U_MIN_SERVO1 1350
 #ifdef  VARIABLE_DAMPING
 /**
  * \brief Minimum PWM command for Damper 0
@@ -116,7 +117,7 @@
  * Alex: The HS-7950TH has a tested max command of 4521
  * The HSR-5990TG had originally a value of 4650
 */
-#define U_MAX_SERVO1 4521
+#define U_MAX_SERVO1 4650
 #ifdef  VARIABLE_DAMPING
 /**
  * \brief Maximum PWM command for Damper 0

@@ -12,6 +12,7 @@
  * The connections to the arduino board are as follows:
  * \li Motor 1 signal wire (usually yellow) is assumed to be attached to digital pin 9 of the Arduino. \note This should correspond to the motor controlling equilibrium position!
  * \li Motor 2 signal wire attached to digital pin 10.
+ * \li Damper motor attached to pin 2
  * \li Motors 1 and 2 powered by 7.2V (red wire to +7.2V, black to ground).
  * \li Motor 1 potentiometer (purple) attached to analogue pin 4.
  * \li Motor 2 potentiometer (purple) attached to analogue pin 5.
